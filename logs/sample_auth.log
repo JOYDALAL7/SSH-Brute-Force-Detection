@@ -1,0 +1,6 @@
+Feb 28 01:00:01 kali sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 54321 ssh2
+Feb 28 01:00:05 kali sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 54322 ssh2
+Feb 28 01:00:10 kali sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 54323 ssh2
+Feb 28 01:00:15 kali sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 54324 ssh2
+Feb 28 01:00:20 kali sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 54325 ssh2
+Feb 28 01:00:25 kali sshd[1234]: Failed password for invalid user admin from 192.168.1.10 port 54326 ssh2
