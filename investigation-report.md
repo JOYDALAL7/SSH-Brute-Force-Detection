@@ -28,7 +28,9 @@ potentially malicious SSH access behavior.
 
 ---
 
-## Log Analysis
+## Investigation & Analysis
+
+### Log Analysis
 
 Review of SSH authentication logs revealed repeated **"Failed password"** events
 for multiple invalid usernames originating from the same source address (`::1`).
@@ -36,9 +38,7 @@ A total of **9 failed SSH password attempts** were recorded. The frequency,
 consistency, and username variation strongly suggest an automated brute-force
 authentication attempt rather than legitimate user behavior.
 
----
-
-## Authentication Analysis
+### Authentication Analysis
 
 Additional analysis of PAM authentication logs confirmed repeated authentication
 failures enforced by the system. A total of **6 PAM authentication failures**
@@ -46,6 +46,12 @@ were recorded, indicating that authentication controls functioned correctly and
 successfully prevented unauthorized access. The presence of
 `pam_unix(sshd:auth)` failure entries confirms proper enforcement of access
 controls.
+
+### Attack Assessment
+
+The observed activity demonstrates characteristics consistent with an automated
+brute-force attack, including repeated authentication failures, username
+variation, and short intervals between attempts.
 
 ---
 
@@ -59,20 +65,22 @@ controls.
 
 ---
 
+## Findings
+
+- A total of 9 failed SSH password attempts were recorded from the same source
+- 6 PAM authentication failures confirmed proper enforcement of access controls
+- Attack targeted multiple invalid usernames, indicating automated behavior
+- No successful authentication events were detected during the activity window
+- The activity is consistent with an automated brute-force attack
+
+---
+
 ## Impact Assessment
 
 No successful SSH authentication events were detected during the investigation.
 The attack did not result in unauthorized access. However, continued brute-force
 activity poses a risk of credential compromise and potential service exposure if
 left unmitigated.
-
----
-
-## Attack Assessment
-
-The observed activity demonstrates characteristics consistent with an automated
-brute-force attack, including repeated authentication failures, username
-variation, and short intervals between attempts.
 
 ---
 
@@ -110,4 +118,11 @@ reduce the risk of brute-force attacks.
 
 ## Failed Attempt Count
 
-![Failed Attempt Count](Screenshots/failed-attempt-count.png)
+## ![Failed Attempt Count](Screenshots/failed-attempt-count.png)
+
+## Conclusion
+
+The investigation confirmed a brute-force SSH authentication attack targeting
+multiple usernames. System authentication controls successfully prevented
+unauthorized access. Remediation steps were identified to harden SSH
+configuration and reduce future attack surface.
