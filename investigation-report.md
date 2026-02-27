@@ -96,18 +96,18 @@ reduce the risk of brute-force attacks.
 
 ## Evidence
 
-### SSH Service Status
+## SSH Service Status
 
-![SSH Service Running](screenshots/ssh-service-running.png)
+![SSH Service Running](Screenshots/ssh-service-running.png)
 
-### Failed SSH Login Attempts
+## Failed SSH Login Attempts
 
-![Failed SSH Login Attempts](screenshots/journalctl-ssh-failed-logins.png)
+![Failed SSH Login Attempts](Screenshots/journalctl-ssh-failed-logins.png)
 
-### Authentication Failures (PAM)
+## Authentication Failures (PAM)
 
-![Authentication Failures (PAM)](screenshots/journalctl-authentication-failures.png)
+![Authentication Failures](Screenshots/journalctl-authentication-failures.png)
 
-### Failed Authentication Attempt Count
+## Failed Attempt Count
 
-![Failed Attempt Count](screenshots/failed-attempt-count.png)
+![Failed Attempt Count](Screenshots/failed-attempt-count.png)
